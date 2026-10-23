@@ -1,0 +1,12 @@
+# Set the model's joint coordinates directly, without running IK.
+#
+# Only the coordinates named in pose.name are touched -- everything else keeps
+# the value it already has, so a partial pose is legal and useful (lock one
+# joint, sweep another). Names are OpenSim coordinate names; positions are
+# radians for rotational coordinates and metres for translational ones.
+# velocity and effort are ignored: the model is realized to Position only.
+sensor_msgs/JointState pose
+---
+bool ok
+# empty on success; on failure, says which names were not recognised
+string message
